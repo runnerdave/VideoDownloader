@@ -214,21 +214,18 @@ public class JavaYoutubeDownloader extends Formatter {
                     log.finest(key + "=" + val);
                     if (key.equals("title")) {
                         filename = val;
-//                    } else if (key.equals("fmt_url_map")) {
+//                    } else if (key.equals("fmt_url_map")) { OLD VALUE IN YOUTUBE API
                     } else if (key.equals("url_encoded_fmt_stream_map")) {
                         String[] formats = commaPattern.split(val);
                         boolean found = false;
                         for (String fmt : formats) {
-//                            String[] fmtPieces = pipePattern.split(fmt);
                             String[] fmtPieces = ampPattern.split(fmt);
                             if (fmtPieces.length == 4) {
-                                //int pieceFormat = Integer.parseInt(fmtPieces[0]);
                                 Map<String, String> fmtPiecesMap = populateFormats(fmtPieces);
                                 int pieceFormat = Integer.parseInt(fmtPiecesMap.get("itag"));
                                 log.fine("Available format=" + pieceFormat);
                                 if (pieceFormat == format) {
                                     // found what we want
-                                    //downloadUrl = fmtPieces[1];
                                     downloadUrl = fmtPiecesMap.get("url");
                                     found = true;
                                     break;

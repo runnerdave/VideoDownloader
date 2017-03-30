@@ -1,4 +1,4 @@
-# Youtube downloaded
+# Youtube downloader
 
 Project that extends the program in the stackoverflow answer: 
 http://stackoverflow.com/questions/4700945/youtube-data-api-get-access-to-media-stream-and-play-java/4834369#4834369
@@ -25,3 +25,5 @@ for I9OZQg4j6EI
 * Package name change to net.runnerdave
 * mavenized
 * readme
+* added new formats
+* updated the file to use the current youtube api value of _url_encoded_fmt_stream_map_ instead of _fmt_url_map_
