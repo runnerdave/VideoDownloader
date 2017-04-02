@@ -27,3 +27,9 @@ for I9OZQg4j6EI
 * readme
 * added new formats
 * updated the file to use the current youtube api value of _url_encoded_fmt_stream_map_ instead of _fmt_url_map_
+
+## Potential Gotchas
+* the video requires a signature
+    *  in the key value with urls to download: url_encoded_fmt_stream_map there is an encrytped
+        signature, this needs to be decrypted and added to the original url,
+        this is explained here: https://www.quora.com/How-can-I-make-a-YouTube-video-downloader-web-application-from-scratch
